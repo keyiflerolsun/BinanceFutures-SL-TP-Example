@@ -47,7 +47,7 @@ def long_giris(alinacak_miktar):
         TG_Bot.send_message(TELEGRAM_ID, f"Long İşleme Giriliyor | {alinacak_miktar}")
     except ApiTelegramException as hata:
         taban.hata_salla(hata)
-    # return binance_api.create_market_buy_order(f"{SEMBOL}/USDT", alinacak_miktar)
+    return binance_api.create_market_buy_order(f"{SEMBOL}/USDT", alinacak_miktar)
 
 def long_cikis(satilacak_miktar):
     konsol.log(f"Long İşlemden Çıkılıyor | {satilacak_miktar}")
@@ -56,7 +56,7 @@ def long_cikis(satilacak_miktar):
         TG_Bot.send_message(TELEGRAM_ID, f"Long İşlemden Çıkılıyor | {satilacak_miktar}")
     except ApiTelegramException as hata:
         taban.hata_salla(hata)
-    # return binance_api.create_market_sell_order(f"{SEMBOL}/USDT", satilacak_miktar, {"reduceOnly": True})
+    return binance_api.create_market_sell_order(f"{SEMBOL}/USDT", satilacak_miktar, {"reduceOnly": True})
 
 def short_giris(alinacak_miktar):
     konsol.log(f"Short İşleme Giriliyor | {alinacak_miktar}")
@@ -65,7 +65,7 @@ def short_giris(alinacak_miktar):
         TG_Bot.send_message(TELEGRAM_ID, f"Short İşleme Giriliyor | {alinacak_miktar}")
     except ApiTelegramException as hata:
         taban.hata_salla(hata)
-    # return binance_api.create_market_sell_order(f"{SEMBOL}/USDT", alinacak_miktar)
+    return binance_api.create_market_sell_order(f"{SEMBOL}/USDT", alinacak_miktar)
 
 def short_cikis(satilacak_miktar):
     konsol.log(f"Short İşlemden Çıkılıyor | {satilacak_miktar}")
@@ -74,7 +74,7 @@ def short_cikis(satilacak_miktar):
         TG_Bot.send_message(TELEGRAM_ID, f"Short İşlemden Çıkılıyor | {satilacak_miktar}")
     except ApiTelegramException as hata:
         taban.hata_salla(hata)
-    # return binance_api.create_market_buy_order(f"{SEMBOL}/USDT", (satilacak_miktar * -1), {"reduceOnly": True})
+    return binance_api.create_market_buy_order(f"{SEMBOL}/USDT", (satilacak_miktar * -1), {"reduceOnly": True})
 
 while True:
     try:

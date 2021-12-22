@@ -217,5 +217,5 @@ Zarar Durdur Fiyatı  : {float(pozisyon_bilgi["entryPrice"][len(pozisyon_bilgi.i
             konsol.log(mesaj)
 
     except BaseError as hata:
-        konsol.print(f"{type(hata).__name__} | {hata}")
+        taban.hata_salla(hata)
         continue
